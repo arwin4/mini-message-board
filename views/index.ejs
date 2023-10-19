@@ -8,12 +8,17 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <% messages.forEach(message=> { const formattedTime =
-    `${message.added.getHours()}:${message.added.getMinutes()}`%>
-    <p>
-      At <%= formattedTime %>, <%= message.user %> said
-      <i> <%= message.text %> </i>
-    </p>
-    <% }); %>
+    <div class="messages">
+      <!-- Append 0 in front of minute number if less than 10 -->
+      <% messages.forEach(message=> { const minutes = message.added.getMinutes()
+      < 10 ? '0' + message.added.getMinutes() : message.added.getMinutes();
+      const formattedTime = `${message.added.getHours()}:${minutes}`%>
+      <p>
+        At <%= formattedTime %>, <%= message.user %> said
+        <i> <%= message.text %> </i>
+      </p>
+      <% }); %>
+    </div>
+    <button onclick="window.open('/new', '_self' )">Write a new message</button>
   </body>
 </html>

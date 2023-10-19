@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New message</title>
+  </head>
+  <body>
+    <h1>Add a new message here.</h1>
+    <form action="/new" method="post">
+      <div>
+        <label for="author-name">Your name: </label>
+        <input id="author-name" name="author-name" type="text" />
+      </div>
+      <div>
+        <label for="message">Your message: </label>
+        <input id="message" name="message" type="text" />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <button style="display: block" onclick="window.open('/', '_self' )">
+      Go back without submitting
+    </button>
+  </body>
+</html>
