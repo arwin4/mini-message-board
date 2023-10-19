@@ -1,11 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
+
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <% messages.forEach(message=> { const formattedTime =
+    `${message.added.getHours()}:${message.added.getMinutes()}`%>
+    <p>
+      At <%= formattedTime %>, <%= message.user %> said
+      <i> <%= message.text %> </i>
+    </p>
+    <% }); %>
   </body>
 </html>
